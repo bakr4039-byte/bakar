@@ -885,7 +885,7 @@
         const tri = indState.triangulation || { doc: false, obs: false, int: false };
 
         let evidencesHtml = item.evs.map((evText, idx) => {
-          const evData = (indState.items && indState.items[idx]) || { checked: false, url: item.driveFolder || "" };
+          const savedEv = (indState.items && indState.items[idx]) || null; const evData = savedEv ? { checked: savedEv.checked, url: savedEv.url || item.driveFolder || "" } : { checked: false, url: item.driveFolder || "" };
           const linkCheck = validateLink(evData.url);
 
           return `

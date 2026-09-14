@@ -1014,7 +1014,7 @@
       container.innerHTML = html;
     }
 
-    (indId, evIndex, field, val) {
+    function updateEvidenceItem(indId, evIndex, field, val) {
       const state = loadState();
       if (!state[indId]) state[indId] = { status: "notstarted", rubric: 1, items: {}, triangulation: { doc: false, obs: false, int: false }, note: "" };
       if (!state[indId].items) state[indId].items = {};

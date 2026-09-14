@@ -1014,11 +1014,11 @@
       container.innerHTML = html;
     }
 
-    function updateEvidenceItem(indId, evIndex, field, val) {
+    (indId, evIndex, field, val) {
       const state = loadState();
       if (!state[indId]) state[indId] = { status: "notstarted", rubric: 1, items: {}, triangulation: { doc: false, obs: false, int: false }, note: "" };
       if (!state[indId].items) state[indId].items = {};
-      if (!state[indId].items[evIndex]) state[indId].items[evIndex] = { checked: false, url: "" };
+      if (!state[indId].items[evIndex]) state[indId].items[evIndex] = { checked: false, url: (fullIndicators52.find(i => i.id === indId) || {}).driveFolder || "" };
       
       state[indId].items[evIndex][field] = val;
 
